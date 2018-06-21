@@ -9,7 +9,7 @@ add_executable(scalc ${scalc_src_files})
 target_include_directories(scalc PUBLIC ${ANTLR_GEN_DIR})
 
 # Ensure that the antlr4-runtime is available.
-add_dependencies(placeholder antlr)
+add_dependencies(scalc antlr)
 
 # Add the antlr runtime and parser as libraries to link.
 target_link_libraries(scalc parser antlr4-runtime)
