@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
   }
 
   // Open the file then parse and lex it.
-  antlr4::ANTLRFileStream afs(argv[1]);
+  antlr4::ANTLRFileStream afs(argv[2]);
   scalc::SCalcLexer lexer(&afs);
   antlr4::CommonTokenStream tokens(&lexer);
   scalc::SCalcParser parser(&tokens);
