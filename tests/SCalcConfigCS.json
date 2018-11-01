@@ -41,7 +41,8 @@
         "stepName": "tail",
         "executablePath": "/usr/bin/tail",
         "arguments": [
-          "-n +6",
+          "-n",
+          "+6",
           "$INPUT"
         ],
         "output": "-"
