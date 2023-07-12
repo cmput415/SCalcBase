@@ -17,20 +17,20 @@
         "output": "interpreterOut"
       }
     ],
-    "mips": [
+    "risc": [
       {
-        "stepName": "scalc-MIPS",
+        "stepName": "scalc-RISC",
         "executablePath": "$EXE",
         "arguments": [
-          "mips",
+          "risc",
           "$INPUT",
           "$OUTPUT"
           ],
-        "output": "mipsOut.s"
+        "output": "riscOut.s"
       },
       {
-        "stepName": "spim",
-        "executablePath": "/usr/bin/spim",
+        "stepName": "rars",
+        "executablePath": "/usr/local/bin/rars",
         "arguments": [
           "-file",
           "$INPUT"
