@@ -3,6 +3,7 @@ The base cmake setup for SCalc assignment.
 
 Author: Braedy Kuzma (braedy@ualberta.ca)  
 Updated by: Deric Cheung (dacheung@ualberta.ca)
+Updated by: Quinn Pham (qpham@ualberta.ca)
 
 # Usage
 ## Building
