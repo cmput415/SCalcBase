@@ -17,32 +17,31 @@
         "output": "interpreterOut"
       }
     ],
-    "risc": [
+    "riscv": [
       {
-        "stepName": "scalc-RISC",
+        "stepName": "scalc-RISCV",
         "executablePath": "$EXE",
         "arguments": [
-          "risc",
+          "riscv",
           "$INPUT",
           "$OUTPUT"
           ],
-        "output": "riscOut.s"
+        "output": "riscvOut.s"
       },
       {
         "stepName": "rars",
         "executablePath": "/usr/local/bin/rars",
         "arguments": [
-          "-file",
           "$INPUT"
         ],
         "output": "-"
       },
       {
-        "stepName": "tail",
-        "executablePath": "/usr/bin/tail",
+        "stepName": "head",
+        "executablePath": "/usr/bin/head",
         "arguments": [
           "-n",
-          "+6",
+          "-2",
           "$INPUT"
         ],
         "output": "-"
