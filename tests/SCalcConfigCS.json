@@ -1,7 +1,7 @@
 {
   "testDir": "testfiles/",
   "testedExecutablePaths": {
-    "<ccid>": "../bin/scalc"
+    "<ccid>": "<path_to_scalc_exe>"
   },
   "toolchains": {
     "interpreter": [
