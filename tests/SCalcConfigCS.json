@@ -1,83 +1,120 @@
 {
-  "testDir": "testfiles/",
+  "testDir": "<path-to-testfiles>",
   "testedExecutablePaths": {
-    "<ccid>": "<path_to_scalc_exe>"
+    "<ccid>": "<path-to-scalc>"
   },
   "toolchains": {
     "interpreter": [
       {
         "stepName": "scalc-interpreter",
         "executablePath": "$EXE",
-        "arguments": ["interpreter", "$INPUT", "$OUTPUT"],
-        "output": "interpreterOut"
+        "arguments": [
+          "interpreter",
+          "$INPUT",
+          "$OUTPUT"
+          ],
+        "output": "scalc.out"
       }
     ],
     "riscv": [
       {
         "stepName": "scalc-RISCV",
         "executablePath": "$EXE",
-        "arguments": ["riscv", "$INPUT", "$OUTPUT"],
-        "output": "riscvOut.s"
+        "arguments": [
+          "riscv",
+          "$INPUT",
+          "$OUTPUT"
+          ],
+        "output": "riscv.s"
       },
       {
         "stepName": "rars",
         "executablePath": "/usr/local/bin/rars",
-        "arguments": ["$INPUT"]
-      },
-      {
-        "stepName": "head",
-        "executablePath": "/usr/bin/head",
-        "arguments": ["-n", "-2", "$INPUT"]
-      }
+        "arguments": [
+          "$INPUT"
+        ],
+        "output": "riscv.out"
+      } 
     ],
     "arm": [
       {
         "stepName": "scalc-ARM",
         "executablePath": "$EXE",
-        "arguments": ["arm", "$INPUT", "$OUTPUT"],
-        "output": "armOut.s"
+        "arguments": [
+          "arm",
+          "$INPUT",
+          "$OUTPUT"
+          ],
+        "output": "arm.s"
       },
       {
         "stepName": "as",
         "executablePath": "/usr/bin/arm-none-eabi-as",
-        "arguments": ["-o", "$OUTPUT", "$INPUT"],
-        "output": "armOut.o"
+        "arguments": [
+          "-o",
+          "$OUTPUT",
+          "$INPUT"
+        ],
+        "output": "arm.o"
       },
       {
         "stepName": "gcc",
         "executablePath": "/usr/bin/arm-none-eabi-gcc",
-        "arguments": ["-specs=rdimon.specs", "-o", "$OUTPUT", "$INPUT"],
-        "output": "armOut"
+        "arguments": [
+          "-specs=rdimon.specs",
+          "-o",
+          "$OUTPUT",
+          "$INPUT"
+        ],
+        "output": "arm.bin"
       },
       {
         "stepName": "qemu",
         "executablePath": "/usr/bin/qemu-arm",
-        "arguments": ["$INPUT"]
+        "arguments": [
+          "$INPUT"
+        ],
+        "output": "arm.out"
       }
     ],
     "x86": [
       {
         "stepName": "scalc-X86",
         "executablePath": "$EXE",
-        "arguments": ["x86", "$INPUT", "$OUTPUT"],
-        "output": "x86Out.s"
+        "arguments": [
+          "x86",
+          "$INPUT",
+          "$OUTPUT"
+          ],
+        "output": "x86.s"
       },
       {
         "stepName": "nasm",
         "executablePath": "/usr/bin/nasm",
-        "arguments": ["-felf", "-o", "$OUTPUT", "$INPUT"],
-        "output": "x86Out.o"
+        "arguments": [
+          "-felf",
+          "-o",
+          "$OUTPUT",
+          "$INPUT"
+        ],
+        "output": "x86.o"
       },
       {
         "stepName": "gcc",
         "executablePath": "/usr/bin/gcc",
-        "arguments": ["-m32", "-o", "$OUTPUT", "$INPUT"],
-        "output": "x86Out"
+        "arguments": [
+          "-m32",
+          "-o",
+          "$OUTPUT",
+          "$INPUT"
+        ],
+        "output": "x86.bin"
       },
        {
         "stepName": "exe",
         "executablePath": "$INPUT",
-        "arguments": []
+        "arguments": [],
+        "output": "x86.out"
       }
     ]
   }
