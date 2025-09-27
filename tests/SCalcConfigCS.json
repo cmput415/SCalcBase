@@ -1,7 +1,7 @@
 {
-  "testDir": "<path-to-testfiles>",
+  "testDir": "./testfiles/",
   "testedExecutablePaths": {
-    "<ccid>": "<path-to-scalc>"
+    "<ccid>": "../bin/scalc"
   },
   "toolchains": {
     "interpreter": [
@@ -29,12 +29,32 @@
       },
       {
         "stepName": "rars",
-        "executablePath": "/usr/local/bin/rars",
+        "executablePath": "/cshome/cmput415/415-resources/rv32.dir/bin/riscv32-unknown-elf-as",
+        "arguments": [
+	  "-o",
+	  "$OUTPUT",
+          "$INPUT"
+        ],
+        "output": "riscv.o"
+      }, 
+      {
+        "stepName": "gcc",
+        "executablePath": "/cshome/cmput415/415-resources/rv32.dir/bin/riscv32-unknown-elf-gcc",
+        "arguments": [
+          "-o",
+          "$OUTPUT",
+          "$INPUT"
+        ],
+        "output": "riscv.bin"
+      },
+      {
+        "stepName": "qemu",
+        "executablePath": "/usr/bin/qemu-riscv32",
         "arguments": [
           "$INPUT"
         ],
         "output": "riscv.out"
-      } 
+      }
     ],
     "arm": [
       {
